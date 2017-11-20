@@ -14,8 +14,8 @@ DHT dht(DHTPIN, DHTTYPE);
 
 float celsiusTemp = 0.0;
 float celsiusTempIndex = 0.0;
-float farenheitTemp = 0.0;
-float farenheitTempIndex = 0.0;
+float fahrenheitTemp = 0.0;
+float fahrenheitTempIndex = 0.0;
 float humidity = 0.0;
 
 int relayStatus = LOW;
@@ -46,9 +46,9 @@ void loop() {
         Serial.print("-CTI_");
         Serial.print(celsiusTempIndex);
         Serial.print("-FT_");
-        Serial.print(farenheitTemp);
+        Serial.print(fahrenheitTemp);
         Serial.print("-FTI_");
-        Serial.println(farenheitTempIndex);
+        Serial.println(fahrenheitTempIndex);
         break;
       case 'o':
         digitalWrite(RELAY, LOW); //Turn on relay
@@ -82,8 +82,8 @@ void readHeatValues() {
   celsiusTemp = dht.readTemperature();
   celsiusTempIndex = dht.computeHeatIndex(celsiusTemp, humidity, false);
   
-  farenheitTemp = dht.readTemperature(true);
-  farenheitTempIndex = dht.computeHeatIndex(farenheitTemp, humidity, true);
+  fahrenheitTemp = dht.readTemperature(true);
+  fahrenheitTempIndex = dht.computeHeatIndex(fahrenheitTemp, humidity, true);
 
   if (isnan(humidity) || isnan(celsiusTemp) || isnan(farenheitTemp)) {
     Serial.println("Failed to read from DHT sensor!");
