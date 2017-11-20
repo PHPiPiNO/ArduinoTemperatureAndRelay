@@ -85,7 +85,7 @@ void readHeatValues() {
   fahrenheitTemp = dht.readTemperature(true);
   fahrenheitTempIndex = dht.computeHeatIndex(fahrenheitTemp, humidity, true);
 
-  if (isnan(humidity) || isnan(celsiusTemp) || isnan(farenheitTemp)) {
+  if (isnan(humidity) || isnan(celsiusTemp) || isnan(fahrenheitTemp)) {
     Serial.println("Failed to read from DHT sensor!");
   }
 
