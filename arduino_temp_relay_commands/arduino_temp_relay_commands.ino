@@ -18,7 +18,7 @@ float farenheitTemp = 0.0;
 float farenheitTempIndex = 0.0;
 float humidity = 0.0;
 
-int relayStatus = 0;
+int relayStatus = LOW;
 
 void setup() {
   pinMode(RELAY, OUTPUT);
@@ -62,9 +62,9 @@ void loop() {
         break;
       case 'i':
         if(relayStatus == HIGH) {
-          Serial.println("Relay is off");
-        } else {
           Serial.println("Relay is on");
+        } else {
+          Serial.println("Relay is off");
         }
         break;
 
