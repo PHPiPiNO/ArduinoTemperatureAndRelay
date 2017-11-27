@@ -18,7 +18,7 @@ float fahrenheitTemp = 0.0;
 float fahrenheitTempIndex = 0.0;
 float humidity = 0.0;
 
-int relayStatus = LOW;
+int relayStatus = HIGH;
 
 void setup() {
   pinMode(RELAY, OUTPUT);
